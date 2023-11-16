@@ -30,9 +30,6 @@ function downloadFile(e) {
     const a = document.createElement('a');
     a.href = link;
 
-    // 可選擇性地指定檔案名稱
-    const fileName = 'your_file_name.txt';
-    a.download = fileName;
 
     // 將 <a> 元素附加到文件
     document.body.appendChild(a);
