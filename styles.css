@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(10,10,10);
-    color: rgb(240,240,240);
+    background-color: rgb(10, 10, 10);
+    color: rgb(240, 240, 240);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -23,13 +23,13 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 20px;
-    background-color: rgb(240,240,240);
+    background-color: rgb(240, 240, 240);
 }
 
 .share-button svg {
     margin-left: 12px;
     margin-top: 10px;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
 }
 
 .container {
@@ -42,27 +42,29 @@ header {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 a {
     text-decoration: none;
-    color: rgb(240,240,240);
+    color: rgb(240, 240, 240);
 }
 
 .tile {
     width: 100%;
-    background-color: rgb(37,37,37);
-    margin: 7px;
+    background-color: rgb(37, 37, 37);
+    margin: 7px 0;
     border-radius: 17px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .tile:hover {
-    transition: cubic-bezier(.07, 1.41, .82, 1.41) 0.2s;
     transform: scale(1.02);
 }
 
@@ -71,28 +73,79 @@ a {
     width: 40px;
     height: 40px;
     border-radius: 20px;
-    background-color: rgb(52,52,52);
+    background-color: rgb(52, 52, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tile-share-button svg {
-    margin-left: 12px;
-    margin-top: 10px;
+    color: rgb(240, 240, 240);
 }
-
 
 .image-container {
     height: 96px;
     width: 96px;
     border-radius: 48px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .image-container img {
     height: 100%;
+    width: auto;
 }
 
 .icon {
     margin: 0;
     width: 44px;
     height: 44px;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .tile {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .icon,
+    .tile-share-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tile-share-button svg {
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .tile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tile-share-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .image-container {
+        height: 72px;
+        width: 72px;
+    }
 }
