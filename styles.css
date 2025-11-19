@@ -1,126 +1,156 @@
+:root {
+  --bg: #f5f5f4;
+  --card-bg: #ffffff;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+  --text-main: #111827;
+  --text-sub: #6b7280;
+  --radius-lg: 20px;
+  --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(10, 10, 10);
-    color: rgb(240, 240, 240);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    font-family: Verdana, Tahoma, sans-serif;
-    font-size: 36px; /* 基本字體大小，適當加大 */
-    line-height: 1.6; /* 提高行距，增加可讀性 */
-}
-
-header {
-    width: 95%;
-    max-width: 788px;
-    display: flex;
-    justify-content: flex-end;
-    padding: 16px; /* 加大內邊距 */
-    margin-top: 20px; /* 增加頂部間距 */
-}
-
-.share-button {
-    width: 48px; /* 增大按鈕尺寸 */
-    height: 48px;
-    border-radius: 24px;
-    background-color: rgb(240, 240, 240);
-}
-
-.share-button svg {
-    margin-left: 16px; /* 微調位置 */
-    margin-top: 14px;
-    color: rgb(0, 0, 0);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  background: radial-gradient(circle at top, #e5e7eb 0, #f5f5f4 55%, #e5e7eb 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-main);
 }
 
 .container {
-    width: 90%; /* 更寬的容器，讓內容不顯擁擠 */
-    max-width: 700px;
-    margin: 20px 0; /* 增加上下間距 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  max-width: 480px;
+  background: var(--card-bg);
+  border-radius: 28px;
+  padding: 24px 20px 28px;
+  box-shadow: var(--shadow-soft);
 }
 
-h1 {
-    font-size: 28px; /* 顯著增大標題字體 */
-    margin-bottom: 30px;
-}
+/* 個人資料區 */
 
-a {
-    text-decoration: none;
-    color: rgb(240, 240, 240);
-}
-
-.tile {
-    width: 100%;
-    background-color: rgb(37, 37, 37);
-    margin: 12px; /* 增加框框間距 */
-    border-radius: 20px; /* 更圓滑的邊角 */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px; /* 增加內邊距，讓內容更居中 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加輕微陰影，讓框框更突出 */
-}
-
-.tile:hover {
-    transition: cubic-bezier(0.07, 1.41, 0.82, 1.41) 0.2s;
-    transform: scale(1.05); /* 增強縮放效果 */
-}
-
-.tile-share-button {
-    margin: 12px; /* 增大間距 */
-    width: 48px; /* 調整按鈕尺寸 */
-    height: 48px;
-    border-radius: 24px;
-    background-color: rgb(52, 52, 52);
-}
-
-.tile-share-button svg {
-    margin-left: 14px;
-    margin-top: 14px;
+.profile {
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .image-container {
-    height: 120px; /* 增大圖片容器尺寸 */
-    width: 120px;
-    border-radius: 60px;
-    overflow: hidden;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 3px solid var(--accent-soft);
 }
 
 .image-container img {
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+    object-position: 50% 15%;
 }
 
-.icon {
-    margin: 0;
-    width: 48px; /* 調整圖標尺寸 */
-    height: 48px;
+h1 {
+  font-size: 1.4rem;
+  margin: 4px 0 4px;
 }
 
-@media (max-width: 768px) {
-    /* 手機和平板調整 */
-    body {
-        font-size: 16px; /* 更小字體適配窄屏 */
-    }
+.tagline {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
 
-    .h1 {
-        font-size: 24px; /* 調整標題字體 */
-    }
+/* 連結列表 */
 
-    .tile {
-        padding: 12px; /* 減小框框內邊距 */
-    }
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
 
-    .tile-share-button {
-        width: 40px; /* 按鈕稍微變小 */
-        height: 40px;
-    }
+.tile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease, transform 0.16s ease, box-shadow 0.16s ease,
+    border-color 0.16s ease;
+}
 
-    .image-container {
-        height: 96px; /* 縮小圖片容器 */
-        width: 96px;
-    }
+.tile:hover {
+  background: #eff6ff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
+}
+
+.icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.tile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.tile-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  margin-top: 2px;
+}
+
+/* RWD */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 16px 24px;
+    border-radius: 24px;
+  }
+
+  .image-container {
+    width: 110px;
+    height: 110px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .tile {
+    padding: 10px 12px;
+  }
 }

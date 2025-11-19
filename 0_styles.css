@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(10, 10, 10);
+    color: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 36px; /* 基本字體大小，適當加大 */
+    line-height: 1.6; /* 提高行距，增加可讀性 */
+}
+
+header {
+    width: 95%;
+    max-width: 788px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px; /* 加大內邊距 */
+    margin-top: 20px; /* 增加頂部間距 */
+}
+
+.share-button {
+    width: 48px; /* 增大按鈕尺寸 */
+    height: 48px;
+    border-radius: 24px;
+    background-color: rgb(240, 240, 240);
+}
+
+.share-button svg {
+    margin-left: 16px; /* 微調位置 */
+    margin-top: 14px;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    width: 90%; /* 更寬的容器，讓內容不顯擁擠 */
+    max-width: 700px;
+    margin: 20px 0; /* 增加上下間距 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 28px; /* 顯著增大標題字體 */
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+}
+
+.tile {
+    width: 100%;
+    background-color: rgb(37, 37, 37);
+    margin: 12px; /* 增加框框間距 */
+    border-radius: 20px; /* 更圓滑的邊角 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px; /* 增加內邊距，讓內容更居中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加輕微陰影，讓框框更突出 */
+}
+
+.tile:hover {
+    transition: cubic-bezier(0.07, 1.41, 0.82, 1.41) 0.2s;
+    transform: scale(1.05); /* 增強縮放效果 */
+}
+
+.tile-share-button {
+    margin: 12px; /* 增大間距 */
+    width: 48px; /* 調整按鈕尺寸 */
+    height: 48px;
+    border-radius: 24px;
+    background-color: rgb(52, 52, 52);
+}
+
+.tile-share-button svg {
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.image-container {
+    height: 120px; /* 增大圖片容器尺寸 */
+    width: 120px;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.image-container img {
+    height: 100%;
+}
+
+.icon {
+    margin: 0;
+    width: 48px; /* 調整圖標尺寸 */
+    height: 48px;
+}
+
+@media (max-width: 768px) {
+    /* 手機和平板調整 */
+    body {
+        font-size: 16px; /* 更小字體適配窄屏 */
+    }
+
+    .h1 {
+        font-size: 24px; /* 調整標題字體 */
+    }
+
+    .tile {
+        padding: 12px; /* 減小框框內邊距 */
+    }
+
+    .tile-share-button {
+        width: 40px; /* 按鈕稍微變小 */
+        height: 40px;
+    }
+
+    .image-container {
+        height: 96px; /* 縮小圖片容器 */
+        width: 96px;
+    }
+}
